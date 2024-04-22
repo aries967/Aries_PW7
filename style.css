@@ -1,0 +1,127 @@
+/* ||GENERAL */
+:root{
+    --BACKGROUND-COLOR: beige;
+    --PRIMARY-COLOR: rgb(121, 121, 11);
+    --PRIMARY-TEXT-COLOR:  whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body, ul, ol, h1{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--BACKGROUND-COLOR)
+}
+
+img, video{
+    width: 400px;
+    height: 400px;
+    max-width: 100%;
+    border-radius: 1em;
+    border: 1px solid gray;
+}
+
+ul{
+    list-style-type: none;
+}
+
+h1{
+    font-size: 1.5rem;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+}
+
+a:hover{
+    font-weight: bolder;
+}
+
+figure{
+    padding: 0;
+    margin: 0;
+}
+
+figcaption{
+    text-align: center;
+}
+
+/* ||UTILITIES */
+.link-list{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.link-list__item{
+    margin-right: 1.2em;
+}
+
+/* ||SITEWIDE */
+.page-header, 
+.page-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--PRIMARY-COLOR);
+    color: var(--PRIMARY-TEXT-COLOR);
+    padding: 0.8em 1.5em;
+}
+
+.page-header{
+    border-bottom: 2px solid black;
+}
+
+.page-header__title{
+    margin-bottom: 0.3em;
+}
+
+.page-content{
+    margin: auto;
+    padding: 2em 4em;
+    background-color: var(--BACKGROUND-COLOR);
+}
+
+/* ||TOUR INFO */
+.tour-info{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3em;
+}
+
+.tour-info > *{
+    margin-bottom: 2em;
+}
+
+.tour-info ul{
+    list-style-type: disc;
+    margin-left: 1em;
+}
+
+
+
+@media (max-width: 1100px){
+    .tour-info{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tour-info__activities{
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 720px){
+    .page-header,
+    .page-footer{
+        flex-direction: column;
+    }
+
+    .tour-info{
+        display: block;
+    }
+
+}
